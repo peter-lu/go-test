@@ -45,6 +45,37 @@ func register(w http.ResponseWriter, r *http.Request) {
 	// 设置cookie
 	w.Header().Set("Set-Cookie", cId.String())
 	w.Header().Add("Set-Cookie", cName.String())
+
+	// 设置cookie
+	http.SetCookie(w, &http.Cookie{
+		Name:       "mobile",
+		Value:      "13388888888",
+		Path:       "/",
+		Domain:     "",
+		Expires:    time.Time{},
+		RawExpires: "",
+		MaxAge:     0,
+		Secure:     false,
+		HttpOnly:   true,
+		SameSite:   0,
+		Raw:        "",
+		Unparsed:   nil,
+	})
+	http.SetCookie(w, &http.Cookie{
+		Name:       "email",
+		Value:      "golang@126.cn",
+		Path:       "/",
+		Domain:     "",
+		Expires:    time.Time{},
+		RawExpires: "",
+		MaxAge:     0,
+		Secure:     false,
+		HttpOnly:   true,
+		SameSite:   0,
+		Raw:        "",
+		Unparsed:   nil,
+	})
+
 }
 
 func getCookie(w http.ResponseWriter, r *http.Request) {
