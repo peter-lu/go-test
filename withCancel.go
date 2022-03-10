@@ -11,6 +11,7 @@ import (
 var ch = make(chan int64, 20)
 
 func main() {
+	//test
 	ch <- 100
 	ch <- 100
 	k, v := <-ch
